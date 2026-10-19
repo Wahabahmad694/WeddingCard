@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sealBg" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#b91c1c" />
+      <stop offset="60%" stop-color="#7f1d1d" />
+      <stop offset="100%" stop-color="#450a0a" />
+    </radialGradient>
+    <linearGradient id="goldBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="50%" stop-color="#d4af37" />
+      <stop offset="100%" stop-color="#996515" />
+    </linearGradient>
+    <linearGradient id="goldText" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#fef08a" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Outer Ring -->
+  <circle cx="64" cy="64" r="60" fill="url(#sealBg)" stroke="url(#goldBorder)" stroke-width="4" filter="url(#shadow)" />
+  
+  <!-- Inner Beaded / Dashed Ring -->
+  <circle cx="64" cy="64" r="52" fill="none" stroke="url(#goldBorder)" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.8" />
+  <circle cx="64" cy="64" r="48" fill="none" stroke="url(#goldBorder)" stroke-width="1" opacity="0.5" />
+
+  <!-- Monogram WZ -->
+  <text 
+    x="64" 
+    y="74" 
+    font-family="'Cinzel', 'Georgia', 'Times New Roman', serif" 
+    font-size="38" 
+    font-weight="900" 
+    fill="url(#goldText)" 
+    text-anchor="middle"
+    letter-spacing="2"
+    filter="url(#shadow)">WZ</text>
+    
+  <!-- Small Star at top -->
+  <polygon points="64,18 66,23 71,23 67,26 68,31 64,28 60,31 61,26 57,23 62,23" fill="#fde047" opacity="0.8" />
+</svg>
