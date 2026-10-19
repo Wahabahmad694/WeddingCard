@@ -13,9 +13,9 @@ import {
   Phone,
 } from "lucide-react";
 import { WeddingEvent, COUPLE, CONTACTS } from "@/data/weddingData";
-import sceneMehndi from "@/assets/scene-mehndi.jpg";
-import sceneBarat from "@/assets/scene-barat.png";
-import sceneWalima from "@/assets/scene-walima.png";
+import sceneMehndi from "@/assets/scene-mehndi.webp";
+import sceneBarat from "@/assets/scene-barat.webp";
+import sceneWalima from "@/assets/scene-walima.webp";
 import { toast } from "sonner";
 
 const sceneImages: Record<string, string> = {
@@ -85,6 +85,8 @@ const ChapterCard: FC<ChapterCardProps> = ({ event }) => {
         <img
           src={sceneImages[event.theme]}
           alt={`${event.title} Ceremony`}
+          loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover object-top sm:object-center"
         />
       </motion.div>
@@ -139,7 +141,7 @@ const ChapterCard: FC<ChapterCardProps> = ({ event }) => {
       </div>
 
       {/* 4. Top Header Ceremony Pill */}
-      <div className="relative z-20 pt-24 sm:pt-20 px-4 text-center">
+      <div className={`relative z-20 px-4 text-center ${event.id === "walima" ? "pt-8 sm:pt-6" : "pt-24 sm:pt-20"}`}>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}

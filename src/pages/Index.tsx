@@ -48,8 +48,7 @@ const Index = () => {
 
   return (
     <main
-      className="relative bg-background overflow-y-auto min-h-screen select-none"
-      style={{ scrollBehavior: "smooth" }}
+      className="relative bg-background min-h-screen select-none"
       ref={mainRef}
     >
       {/* Royal 3D Envelope Opening */}

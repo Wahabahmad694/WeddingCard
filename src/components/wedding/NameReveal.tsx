@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { COUPLE } from "@/data/weddingData";
-import sceneNameReveal from "@/assets/scene-name-reveal.png";
+import sceneNameReveal from "@/assets/scene-name-reveal.webp";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 interface NameRevealProps {

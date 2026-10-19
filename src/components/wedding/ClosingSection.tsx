@@ -29,7 +29,7 @@ const ClosingSection = ({ onReopenEnvelope }: ClosingSectionProps) => {
   };
 
   return (
-    <section className="relative w-screen min-h-screen snap-start snap-always flex items-center justify-center flex-shrink-0 px-4 py-16 overflow-hidden">
+    <section className="relative w-screen min-h-screen snap-start flex items-center justify-center flex-shrink-0 px-4 py-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 silk-texture" style={{ background: "var(--gradient-warm)" }} />
       <div className="absolute inset-0 pattern-islamic opacity-10 pointer-events-none" />

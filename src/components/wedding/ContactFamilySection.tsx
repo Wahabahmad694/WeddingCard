@@ -6,7 +6,7 @@ const ContactFamilySection = () => {
   return (
     <section
       id="contacts"
-      className="relative w-screen min-h-screen snap-start snap-always flex flex-col items-center justify-center px-4 py-16 overflow-hidden flex-shrink-0"
+      className="relative w-screen min-h-screen snap-start flex flex-col items-center justify-center px-4 py-16 overflow-hidden flex-shrink-0"
     >
       {/* Background */}
       <div

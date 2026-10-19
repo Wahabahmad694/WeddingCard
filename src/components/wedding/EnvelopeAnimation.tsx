@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp, Volume2, VolumeX, Sparkles } from "lucide-react";
-import baseFlower from "@/assets/base.png";
+import baseFlower from "@/assets/base.webp";
 import { COUPLE } from "@/data/weddingData";
 
 interface EnvelopeAnimationProps {
@@ -71,7 +71,7 @@ const EnvelopeAnimation = ({ isOpen, onOpen }: EnvelopeAnimationProps) => {
 
   return (
     <>
-      <audio ref={audioRef} src="/wedding-music.mp3" loop />
+      <audio ref={audioRef} src="/wedding-music.mp3" preload="none" loop />
       
       <AnimatePresence>
         {!isOpen && (
