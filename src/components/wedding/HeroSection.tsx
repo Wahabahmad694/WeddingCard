@@ -93,7 +93,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative w-screen min-h-screen snap-start snap-always flex flex-col items-center justify-center flex-shrink-0 px-4 py-16 overflow-hidden">
+    <section className="relative w-full min-h-[100svh] snap-start snap-always flex flex-col items-center justify-center flex-shrink-0 px-4 pt-24 pb-16 sm:py-16 overflow-x-hidden">
       {/* Background layers */}
       <div className="absolute inset-0 silk-texture" style={{ background: "var(--gradient-warm)" }} />
       <div className="absolute inset-0 pattern-islamic opacity-10 pointer-events-none" />

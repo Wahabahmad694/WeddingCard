@@ -11,7 +11,7 @@ const StoryScene: FC<StorySceneProps> = ({ event }) => {
   return (
     <section
       id={event.id}
-      className="relative w-screen h-screen snap-start snap-always overflow-hidden flex-shrink-0"
+      className="relative w-full min-h-[100svh] snap-start snap-always flex-shrink-0"
     >
       <ChapterCard event={event} />
       <ScrollIndicator />

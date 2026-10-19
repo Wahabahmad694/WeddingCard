@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { Flower2 } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 interface Petal {
   x: number;
@@ -16,10 +15,7 @@ interface Petal {
 
 const RosePetalsOverlay = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [enabled, setEnabled] = useState(true);
-
   useEffect(() => {
-    if (!enabled) return;
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext("2d");
@@ -115,30 +111,13 @@ const RosePetalsOverlay = () => {
       window.removeEventListener("resize", handleResize);
       cancelAnimationFrame(animationFrameId);
     };
-  }, [enabled]);
+  }, []);
 
   return (
-    <>
-      {enabled && (
-        <canvas
-          ref={canvasRef}
-          className="fixed inset-0 pointer-events-none z-40 w-full h-full"
-        />
-      )}
-
-      {/* Floating Petal Effect Toggle in bottom left */}
-      <button
-        type="button"
-        onClick={() => setEnabled((prev) => !prev)}
-        className="fixed bottom-6 left-6 z-50 p-2.5 rounded-full glass-card hover:bg-white text-rose-700 shadow-md border border-rose-300/40 transition-all hover:scale-105 flex items-center gap-1.5 cursor-pointer"
-        title={enabled ? "Pause falling petals" : "Enable falling rose petals"}
-      >
-        <Flower2 size={16} className={enabled ? "animate-spin text-rose-600" : "text-muted-foreground"} style={{ animationDuration: "12s" }} />
-        <span className="text-[10px] font-sans font-medium hidden sm:inline text-rose-900">
-          {enabled ? "Petals Active" : "Petals Paused"}
-        </span>
-      </button>
-    </>
+    <canvas
+      ref={canvasRef}
+      className="fixed inset-0 pointer-events-none z-40 w-full h-full"
+    />
   );
 };
 

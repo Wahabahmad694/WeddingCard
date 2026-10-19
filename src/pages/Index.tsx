@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { useScroll, motion } from "framer-motion";
+import { useScroll } from "framer-motion";
 import EnvelopeAnimation from "@/components/wedding/EnvelopeAnimation";
 import NameReveal from "@/components/wedding/NameReveal";
 import HeroSection from "@/components/wedding/HeroSection";
@@ -8,7 +8,7 @@ import ContactFamilySection from "@/components/wedding/ContactFamilySection";
 import ClosingSection from "@/components/wedding/ClosingSection";
 import RosePetalsOverlay from "@/components/wedding/RosePetalsOverlay";
 import ScrollProgress from "@/components/wedding/ScrollProgress";
-import { EVENTS, COUPLE } from "@/data/weddingData";
+import { EVENTS } from "@/data/weddingData";
 
 const Index = () => {
   const [doorsOpen, setDoorsOpen] = useState(false);
@@ -34,13 +34,6 @@ const Index = () => {
     setNameRevealDone(false);
     setDoorsOpen(false);
   }, []);
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
@@ -70,55 +63,6 @@ const Index = () => {
       {/* Main Wedding Experience */}
       {doorsOpen && nameRevealDone && (
         <>
-          {/* Top Floating Luxury Header Navigation */}
-          <motion.header
-            className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2 rounded-full glass-card border border-amber-300/40 shadow-lg flex items-center gap-2 sm:gap-4 max-w-[95vw] overflow-x-auto"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-          >
-            <span className="font-serif font-bold text-amber-900 text-xs sm:text-sm tracking-wide hidden sm:inline px-1">
-              {COUPLE.initials}
-            </span>
-            <div className="h-3 w-px bg-amber-300/60 hidden sm:inline" />
-
-            <button
-              type="button"
-              onClick={() => scrollTo("hero")}
-              className="text-[11px] sm:text-xs font-cinzel uppercase tracking-wider font-semibold text-amber-950/80 hover:text-amber-700 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              Invitation
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollTo("mehndi")}
-              className="text-[11px] sm:text-xs font-cinzel uppercase tracking-wider font-semibold text-amber-950/80 hover:text-amber-700 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              Mehndi
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollTo("barat")}
-              className="text-[11px] sm:text-xs font-cinzel uppercase tracking-wider font-semibold text-amber-950/80 hover:text-amber-700 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              Barat
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollTo("walima")}
-              className="text-[11px] sm:text-xs font-cinzel uppercase tracking-wider font-semibold text-amber-950/80 hover:text-amber-700 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              Walima
-            </button>
-            <button
-              type="button"
-              onClick={() => scrollTo("contacts")}
-              className="text-[11px] sm:text-xs font-cinzel uppercase tracking-wider font-semibold text-amber-950/80 hover:text-amber-700 whitespace-nowrap cursor-pointer transition-colors"
-            >
-              RSVP & Contacts
-            </button>
-          </motion.header>
-
           {/* Falling Rose Petals & Golden Embers Overlay */}
           <RosePetalsOverlay />
 

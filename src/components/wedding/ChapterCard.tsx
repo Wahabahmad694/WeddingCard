@@ -75,7 +75,7 @@ const ChapterCard: FC<ChapterCardProps> = ({ event }) => {
   };
 
   return (
-    <div className="relative w-screen h-screen overflow-hidden flex flex-col justify-between">
+    <div className="relative w-full min-h-[100svh] flex flex-col justify-between overflow-x-hidden">
       {/* 1. Full-bleed Animated Character Photo Background */}
       <motion.div
         className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none"
@@ -139,7 +139,7 @@ const ChapterCard: FC<ChapterCardProps> = ({ event }) => {
       </div>
 
       {/* 4. Top Header Ceremony Pill */}
-      <div className="relative z-20 pt-16 sm:pt-20 px-4 text-center">
+      <div className="relative z-20 pt-24 sm:pt-20 px-4 text-center">
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ const ChapterCard: FC<ChapterCardProps> = ({ event }) => {
 
       {/* 5. Bottom Overlay with Event Details and Quick Controls */}
       <motion.div
-        className="relative z-20 w-full max-w-3xl mx-auto px-4 pb-8 sm:pb-12 text-center text-white space-y-3"
+        className="relative z-20 w-full max-w-3xl mx-auto px-4 pb-20 sm:pb-12 pt-12 text-center text-white space-y-3"
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
